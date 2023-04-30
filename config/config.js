@@ -1,23 +1,24 @@
+const config = require('../config');
 const creds = {
   development: {
-    username: "postgres",
-    password: "e1r2y3a4",
+    username: config.DB_USERNAME,
+    password: config.DB_PASSWORD,
     database: "postgres",
-    host: "localhost:5432",
-    dialect: 'postgresql'
+    host: config.DB_HOSTNAME,
+    dialect: config.DB_DIALECT
   },
   test: {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOSTNAME,
+    username: config.DB_USERNAME,
+    password: config.DB_PASSWORD,
+    database: config.DB_NAME,
+    host: config.DB_HOSTNAME,
     dialect: 'postgresql'
   },
   production: {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOSTNAME,
+    username: config.DB_USERNAME,
+    password: config.DB_PASSWORD,
+    database: config.DB_NAME,
+    host: config.DB_HOSTNAME,
     dialect: 'postgresql'
   }
 };
